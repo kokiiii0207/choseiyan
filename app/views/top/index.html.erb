@@ -1,7 +1,11 @@
 イベント名
 
-<%= form_for @schedules, url: client_inquiry_path(work_id: params[:work_id]) do |f| %>
-  
+<%= form_for @schedule, url: top_index_path, method: :post do |f| %>
+
+<%= f.text_field :title, placeholder: '飲み会、バーベキュー'%>
+
+<%= f.submit'スケジュールを作成する' %>
+
 <% end %>
 メモ
 

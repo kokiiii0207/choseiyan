@@ -47,6 +47,7 @@ group :development do
   group :development, :test do
     gem 'pry-byebug'
     gem 'pry-rails'
+    gem 'pry-doc' 
   end
 
   gem 'hirb'         # モデルの出力結果を表形式で表示するGem
