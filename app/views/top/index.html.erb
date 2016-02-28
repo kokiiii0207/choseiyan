@@ -1,0 +1,10 @@
+イベント名
+<%= form_for @schedule, url: top_index_path, method: :post do |f| %>
+  <%= f.text_field :title, placeholder: '飲み会、バーベキュー'%>
+  <br>
+  メモ
+  <br>
+  <%= f.text_field :comment, placeholder: 'メモ'%>
+
+  <%= f.submit'スケジュールを作成する' %>
+<% end %>

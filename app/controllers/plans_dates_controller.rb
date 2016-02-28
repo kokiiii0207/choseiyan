@@ -1,0 +1,2 @@
+class PlansDatesController < ApplicationController
+end
