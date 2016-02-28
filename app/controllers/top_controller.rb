@@ -7,6 +7,7 @@ class TopController < ApplicationController
   def create
     @schedule = Schedule.new(schedule_params)
     @schedule.save!
+    
   end
 
 
