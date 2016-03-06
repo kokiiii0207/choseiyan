@@ -81,8 +81,8 @@ class TopController < ApplicationController
           for d in 1..@start_date_plus.end_of_month.day
             @the_created_day = Date.new @start_date_plus.year.to_i, m.to_i, d.to_i
             HostPlansDate.create(host_nominated_day: @the_created_day, schedule_id: params[:schedule_id])
-            @start_date_plus = @start_date_plus + 1.month
           end
+          @start_date_plus = @start_date_plus + 1.month
         end
       end
     end
