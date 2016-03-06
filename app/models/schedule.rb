@@ -8,7 +8,7 @@ class Schedule < ActiveRecord::Base
 
   JOIN_STATUS_HASH = {
     JOIN       => "◯",
-    NOT_DECIDE => "△",
+    NOT_DECIDED => "△",
     CANT_JOIN  => "×"
   }
 

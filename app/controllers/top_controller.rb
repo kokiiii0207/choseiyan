@@ -76,12 +76,17 @@ class TopController < ApplicationController
       end
     else
       for m in start_date.month..end_date.month
-        if m == start_date.month
+        if m == start_date.month && m != end_date.month
           for d in start_date.day..@start_date_plus.end_of_month.day
             @the_created_day = Date.new @start_date_plus.year.to_i, m.to_i, d.to_i
             HostPlansDate.create(host_nominated_day: @the_created_day, schedule_id: params[:schedule_id])
           end
           @start_date_plus = @start_date_plus + 1.month
+        elsif m == start_date.month && m == end_date.month
+          for d in start_date.day..end_date.day
+            @the_created_day = Date.new start_date.year.to_i, m.to_i, d.to_i
+            HostPlansDate.create(host_nominated_day: @the_created_day, schedule_id: params[:schedule_id])
+          end
         elsif m == end_date.month
           for d in 1..end_date.day
             @the_created_day = Date.new @start_date_plus.year.to_i, m.to_i, d.to_i
