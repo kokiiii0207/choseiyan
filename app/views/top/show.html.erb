@@ -15,9 +15,12 @@
 
     <tbody>
           <% @host_plans_dates.each do |host_plans_date| %>
+          <%  %>
           <tr>
             <td>
             <%= host_plans_date.host_nominated_day %>
+            <%= host_plans_date %>
+
             </td>
           </tr>
           <% end %>

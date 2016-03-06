@@ -14,6 +14,10 @@ class TopController < ApplicationController
   def show
     @schedule = Schedule.where(individual_url: params[:individual_url]).first
     @host_plans_dates = @schedule.host_plans_dates
+    @plansdate_all_records = PlansDate.where(schedule_id: @schedule.id).all
+    @plans_status_join = @plansdate_all_records.where(join_satus: Schedule::JOIN).all
+    @plans_status_not_decided = @plansdate_all_records.where(join_satus: Schedule::NOT_DECIDED).all
+    @plans_status_cant_join = @plansdate_all_records.where(join_satus: Schedule::CANT_JOIN).all
   end
 
   def thanx
