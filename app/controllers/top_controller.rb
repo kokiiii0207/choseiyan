@@ -14,7 +14,6 @@ class TopController < ApplicationController
   def show
     @schedule = Schedule.where(individual_url: params[:individual_url]).first
     @host_plans_dates = @schedule.host_plans_dates
-
   end
 
   def thanx
