@@ -2,5 +2,6 @@
   候補日程<br>
   開始日<%= select_date(Date.today, use_month_numbers: true, prefix: :start_day )%><br>
   終了日<%= select_date(Date.today, use_month_numbers: true, prefix: :end_day )%><br>
+  <%= hidden_field_tag :schedule_id, @schedule.id %>
 <%= submit_tag '日にち詳細に進む', class: '' %>
 <% end %>

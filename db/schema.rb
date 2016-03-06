@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160228061421) do
+ActiveRecord::Schema.define(version: 20160306163749) do
 
   create_table "host_plans_dates", force: :cascade do |t|
     t.integer  "schedule_id"
@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20160228061421) do
   create_table "plans_dates", force: :cascade do |t|
     t.integer  "schedule_id"
     t.integer  "user_id"
-    t.boolean  "joins_status"
     t.boolean  "host_flag"
     t.date     "nominated_day"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "join_status"
   end
 
   create_table "schedules", force: :cascade do |t|
