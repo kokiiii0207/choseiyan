@@ -1,0 +1,21 @@
+「<%= @schedule.title %>」の出欠確認<br>
+<li>メモ</li>
+<%= @schedule.comment %>
+<table>
+    <thead>
+      <tr>
+        <th class="id">予定日</th>
+        <th class="delete">削除</th>
+      </tr>
+    </thead>
+
+    <tbody>
+          <% @host_plans_dates.each do |host_plans_date| %>
+          <tr>
+            <td>
+            <%= host_plans_date.host_nominated_day %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>

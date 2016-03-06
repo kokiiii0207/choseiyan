@@ -7,11 +7,18 @@ class TopController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
+    @schedule.individual_url = Digest::SHA1.hexdigest(Time.now.to_s)
     @schedule.save!
+  end
+
+  def show
+    @schedule = Schedule.where(individual_url: params[:individual_url]).first
+    @host_plans_dates = @schedule.host_plans_dates
 
   end
 
   def thanx
+    @schedule = Schedule.where(id: params[:schedule_id]).first
     params_start_day = params[:start_day]
     start_date= Date.new params_start_day["year"].to_i,
                          params_start_day["month"].to_i,
@@ -85,7 +92,10 @@ class TopController < ApplicationController
           @start_date_plus = @start_date_plus + 1.month
         end
       end
+
+      redirect_to top_path(@schedule)
     end
+
   end
 
 
