@@ -2,27 +2,28 @@
 <li>メモ</li>
 <%= @schedule.comment %>
 <table>
-    <thead>
-      <tr>
-        <th class="id">予定日</th>
-        <th class="delete">◯</th>
-        <th class="delete">△</th>
-        <th class="delete">×</th>
+  <thead>
+    <tr>
+      <th class="id">予定日</th>
+      <th class="delete">◯</th>
+      <th class="delete">△</th>
+      <th class="delete">×</th>
 
 
       </tr>
     </thead>
 
     <tbody>
-          <% @host_plans_dates.each do |host_plans_date| %>
-          <%  %>
-          <tr>
-            <td>
-            <%= host_plans_date.host_nominated_day %>
-            <%= host_plans_date %>
+      <% @host_plans_dates.each do |host_plans_date| %>
+      <%  %>
+      <tr>
+        <td>
+        <%= host_plans_date.host_nominated_day %>
+        <%= host_plans_date %>
 
-            </td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+<%= link_to "出席を編集する", edit_top_path(@schedule)%>

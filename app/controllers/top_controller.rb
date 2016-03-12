@@ -104,6 +104,19 @@ class TopController < ApplicationController
       redirect_to top_path(@schedule)
     end
 
+    def edit
+      @user = User.new
+      @plans_date = PlansDate.new
+      @schedule = Schedule.where(individual_url: params[:individual_url]).first
+      @host_plans_dates = @schedule.host_plans_dates
+    end
+
+    def update
+      @schedule.plans_date.create
+      @plans_date = PlansDate.new
+      @plans_date.save!
+    end
+
   end
 
 
